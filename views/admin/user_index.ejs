@@ -1,0 +1,30 @@
+<%- include('header') %>
+<ol class="breadcrumb">
+  <li><a href="/admin">管理首页</a></li>
+  <li><span>用户首页</span></li>
+</ol>
+<h3>用户列表</h3>
+<table class="table table-hover table-striped">
+  <tr>
+    <th>ID</th>
+    <th>用户名</th>
+    <th>密码 (简单sha1加密)</th>
+    <th>头像</th>
+    <th>性别</th>
+    <th>是否是管理员</th>
+  </tr>
+
+
+  <% for (let index=0;index<users.length;index++) {%>
+  <tr>
+    <td><%= users[index]._id.toString() %></td>
+    <td><%=users[index].name %></td>
+    <td><%= users[index].password %></td>
+    <td><img class="avatar" src="/img/<%= users[index].avatar %>"></td>
+    <td><%= ({m: '男', f: '女', x: '保密'})[users[index].gender] %></td>
+    <td><%if (users[index].isAdmin){%>是<%}%></td>
+  </tr>
+  <%}%>
+
+</table>
+<%- include('footer') %>

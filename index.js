@@ -68,7 +68,7 @@ app.use(expressWinston.logger({
   ]
 }))
 // 路由
-routes(app)
+routes(app);
 // 错误请求的日志
 app.use(expressWinston.errorLogger({
   transports: [
