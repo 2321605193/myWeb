@@ -11,6 +11,7 @@
     <th>密码 (简单sha1加密)</th>
     <th>头像</th>
     <th>性别</th>
+    <th>创建时间</th>
     <th>是否是管理员</th>
   </tr>
 
@@ -22,6 +23,7 @@
     <td><%= users[index].password %></td>
     <td><img class="avatar" src="/img/<%= users[index].avatar %>"></td>
     <td><%= ({m: '男', f: '女', x: '保密'})[users[index].gender] %></td>
+    <td><%= users[index].created_at %></td>
     <td><%if (users[index].isAdmin){%>是<%}%></td>
   </tr>
   <%}%>
