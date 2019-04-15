@@ -25,7 +25,4 @@ module.exports = {
       .addCreatedAt()
       .exec()
   }
-
-
-
 };
