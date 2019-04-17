@@ -3,3 +3,13 @@
   width: 48px;
   height: 48px;
 }
+
+#successMessage,#errorMessage{
+  margin: 0 auto;
+  font-size: 16px;
+  justify-items: center;
+  line-height: 45px;
+  background: #ee25;
+  box-shadow: 0 0 0 1px #11dd55 inset;
+  text-align: center;
+}

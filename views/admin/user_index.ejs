@@ -13,6 +13,7 @@
     <th>性别</th>
     <th>创建时间</th>
     <th>是否是管理员</th>
+    <th>修改</th>
   </tr>
 
 
@@ -25,6 +26,9 @@
     <td><%= ({m: '男', f: '女', x: '保密'})[users[index].gender] %></td>
     <td><%= users[index].created_at %></td>
     <td><%if (users[index].isAdmin){%>是<%}%></td>
+    <td>
+      <a href="/admin/user/<%= users[index].name %>/remove">删除</a>
+    </td>
   </tr>
   <%}%>
 

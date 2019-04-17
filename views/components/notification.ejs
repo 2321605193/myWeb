@@ -3,13 +3,13 @@
   <div class="eight wide column">
 
     <% if (success) { %>
-      <div class="ui success message">
+      <div class="ui success message" id="successMessage">
         <p><%= success %></p>
       </div>
     <% } %>
 
     <% if (error) { %>
-      <div class="ui error message">
+      <div class="ui error message" id="errorMessage">
         <p><%= error %></p>
       </div>
     <% } %>

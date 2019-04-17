@@ -24,5 +24,8 @@ module.exports = {
       .sort({ _id: -1 })
       .addCreatedAt()
       .exec()
-  }
+  },
+  delUserByName: function v (name) {
+    return User.deleteOne({ name: name }).exec()
+  },
 };

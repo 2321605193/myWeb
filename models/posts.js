@@ -92,7 +92,7 @@ module.exports = {
     return Post.update({ _id: postId }, { $set: data }).exec()
   },
 
-// 通过用户 id 和文章 id 删除一篇文章
+// 通过用户 id 和用户 id 删除用户下所有文章
   delPostById: function delPostById (author,postId ) {
     return Post.deleteOne({ author: author, _id: postId })
       .exec()
@@ -102,5 +102,17 @@ module.exports = {
           return CommentModel.delCommentsByPostId(postId)
         }
       })
+  },
+
+  delPostByUserId: function delPostByUserId (author ) {
+    return Post.deleteMany({ author: author })
+      .exec()
+      .then(function (res) {
+        // 文章删除后，再删除该文章下的所有留言
+        if (res.result.ok && res.result.n > 0) {
+          return CommentModel.delCommentsByUserId(author)
+        }
+      })
   }
+
 };
