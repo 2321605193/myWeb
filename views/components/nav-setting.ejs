@@ -1,4 +1,4 @@
-<div class="nav-setting">
+﻿<div class="nav-setting">
   <div class="ui buttons">
     <div class="ui floating dropdown button">
       <i class="icon bars"></i>
@@ -6,6 +6,7 @@
         <% if (user) { %>
           <a class="item" href="/posts?author=<%= user._id %>">个人主页</a>
           <div class="divider"></div>
+          <a class="item" href="/posts">首页</a>
           <a class="item" href="/posts/create">发表文章</a>
           <% if (user.isAdmin) { %>
             <a class="item" href="/admin">后台管理</a>
